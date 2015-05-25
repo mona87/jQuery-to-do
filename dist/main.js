@@ -22,8 +22,10 @@ function start(event){
 		obj.id = count;
 		obj.todo = obj.id+') '+$inputBox.val();
 		obj.completed = false;
-		obj.deleted = false;	
+		obj.deleted = false;
+		$.post('http://tiny-pizza-server.herokuapp.com/collections/mona', obj);	
 		arraylist.push(obj);
+
 		//clears input box
 		$inputBox.val('');
 
@@ -51,8 +53,6 @@ function start(event){
 		for(var i = 0; i< arraylist.length; i++){
 
 			if(arraylist[i].completed === true){
-					console.log(list[i]);
-					console.log($sect.find('#'+arraylist[i].id))
 					var $div = $($sect.find('#'+arraylist[i].id));
 						$div.css('text-decoration', 'line-through');
 			}
@@ -72,7 +72,7 @@ function start(event){
 					//set completed to true and scrathes it off
 					arraylist[i].completed = true;
 					$this.css('text-decoration', 'line-through');
-					console.log(arraylist[i]);
+					
 				}
 			}
 		}

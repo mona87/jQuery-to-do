@@ -1,0 +1,89 @@
+html, body{
+	
+	height: 100%;
+	font-size: 1.5rem;
+	/*font-family: 'Josefin Sans', sans-serif;*/
+	font-family: 'Nothing You Could Do', sans-serif;
+	font-weight: 300;
+	color: white;
+}
+
+body{
+	background-color: #669999;
+	background-color: hsl(120, 50% 50%);
+	position: relative;
+	width: 100%;
+	
+}
+
+.container{
+	text-align: left;
+   	position:absolute;
+    left:60%;
+    top:10%;
+    max-width:700px;
+    height:400px;
+    margin-left: -350px;
+    margin-right: -350px;
+  
+
+}
+
+h3{
+	font-weight: 300;
+		clear: both;
+}
+
+
+input{
+
+	height: 40px;
+	width: 400px;
+	display: block;
+	margin-bottom: 20px;
+	font-size: 1rem;
+	
+
+}
+
+::-webkit-input-placeholder {
+   color: #eee;
+}
+
+
+input[placeholder]{
+
+color: #7D8CAF;
+/*font-style: italic;*/
+box-sizing:border-box;
+}
+
+
+button{
+
+	display: block;
+	width: 180px;
+	height: 40px;
+	background-color: #D49A6A;
+	border-radius: 5px;
+	color: white;
+	border: none;
+	font-size: .7rem;
+	margin-bottom: 20px;
+	border: 1px solid #804515;
+	float: left;
+	margin-right: 40px;
+	box-sizing:border-box;
+	transition: 300ms ;
+}
+
+button:hover{
+
+	background-color: #FFD1AA;
+}
+
+section{
+	text-align: left;
+
+	/*margin-left: 75px;*/
+}

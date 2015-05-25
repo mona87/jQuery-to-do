@@ -1,0 +1,9 @@
+{
+  "name": "dist",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mona87/jQuery-to-do",
+  "authors": [
+    "Ramona Bellamy <bellamy2727@yahoo.com>"
+  ],
+  "license": "MIT"
+}

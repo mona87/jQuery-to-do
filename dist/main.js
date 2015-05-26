@@ -5,6 +5,7 @@ function start(event){
 	var $inputBox = $('#inputBox');
 	var $btn = $('#btn');
 	var $clear = $('#clear');
+	var $undo = $('#undo');
 	var $sect = $('#sect');
 	var $form = $('#myForm');
 	var arraylist = [];
@@ -14,6 +15,7 @@ function start(event){
 
 	$form.on('submit', render);
 
+
 	function render(e){
 		//console.log($btn);
 		count++;
@@ -22,8 +24,7 @@ function start(event){
 		obj.id = count;
 		obj.todo = obj.id+') '+$inputBox.val();
 		obj.completed = false;
-		obj.deleted = false;
-		$.post('http://tiny-pizza-server.herokuapp.com/collections/mona', obj);	
+		obj.deleted = false;	
 		arraylist.push(obj);
 
 		//clears input box
@@ -37,10 +38,10 @@ function start(event){
 			
 		}
 		
-		$sect.html('');
+		$sect.html('');		
 		$sect.html(list);
 		check();
-		
+		//deleteItem()	
 		$sect.on('click','div', strikeThru);
 		//resets array
 		list = [];
@@ -53,11 +54,27 @@ function start(event){
 		for(var i = 0; i< arraylist.length; i++){
 
 			if(arraylist[i].completed === true){
+					//console.log(list[i]);
+					console.log($sect.find('#'+arraylist[i].id))
 					var $div = $($sect.find('#'+arraylist[i].id));
 						$div.css('text-decoration', 'line-through');
 			}
 		}
+
+
 	}
+	// function deleteItem(){
+
+	// 	for(var i = 0; i < arraylist.length; i++){
+	// 		if(arraylist[i].deleted === true){
+				
+	// 			var $div = $($sect.find('#'+arraylist[i].id));
+	// 			$div.css('display', 'none');
+	// 		}
+
+	// 	}
+	// }
+
 
 	function strikeThru(e){
 
@@ -71,8 +88,9 @@ function start(event){
 				if(arraylist[i].completed === false){
 					//set completed to true and scrathes it off
 					arraylist[i].completed = true;
+					arraylist[i].deleted = true;
 					$this.css('text-decoration', 'line-through');
-					
+					console.log(arraylist[i]);
 				}
 			}
 		}
